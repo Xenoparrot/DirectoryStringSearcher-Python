@@ -67,7 +67,7 @@ def search_for_strings_in_directory(directory, strings_array, valid_filetype_arr
 def main():
     # run this script in any terminal (or cmd) --as long as you have python--
     # definitely works on Windows, on a budget gaming laptop it runs quite fast
-    # the below (default) settings checked 6035 files, with 962 sub folders, in about 5 seconds
+    # the below (default) settings checked 6035 files, with 962 sub folders, in about 2 seconds
     # it can look for an array of strings, but I only searched for 1 here
 
     # HOW-TO (in case you forgot)
