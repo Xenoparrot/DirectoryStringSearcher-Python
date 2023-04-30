@@ -80,14 +80,17 @@ def main():
     # you know it's done when it prints FINISHED
     # to run the script a second time, in the terminal press the up arrow key and press enter
 
+    # IMPORTANT: make sure your desired_text_array strings are all lowercase, 
+    # as the code requires all text to be lowercase to match (it considers all text lowercase)
+
     start_time = time.time()
     os.system('cls') # clear console
     global total_files_checked
     global total_lines_matched
     global total_folders_found
 
-    directory = os.fsencode('C:/0-Godot Games/Engine/Godot 4.0 Source/Godot_v4.0.2')
-    desired_text_array = ['local position or translation of this node relative to the parent']
+    directory = os.fsencode('C:/0-Godot Games/0-Engine/Godot Source')
+    desired_text_array = ['class image']
     valid_filetype_array = [".txt",".py",".cpp",".h",".xml"]
 
     search_for_strings_in_directory(directory, desired_text_array, valid_filetype_array)
