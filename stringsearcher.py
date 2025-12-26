@@ -18,7 +18,7 @@ def search_multiple_strings_in_file(file_name, list_of_strings):
             line_number += 1
             # For each line, check if line contains any string from the list of strings
             for string_to_search in list_of_strings:
-                if string_to_search in line.lower():
+                if string_to_search.lower() in line.lower():
                     # If any string is found in line, then append that line along with line number in list
                     list_of_results.append((string_to_search, line_number, ' '.join(line.split()))) # strip white space
     # Return list of tuples containing matched string, line numbers and lines where string is found
@@ -75,6 +75,7 @@ def main():
     # edit the code as needed, edit the directory, the strings searched for, and the accepted filetypes
     # open terminal in terminal tab of vscode
     # finally type in the below:
+    # cd "C:\5-Code Projects\PythonStringSearcher\DirectoryStringSearcher-Python"
     # py stringsearcher.py
     # you should then have your results (if strings were found, they will be printed along with location)
     # you know it's done when it prints FINISHED
@@ -83,15 +84,22 @@ def main():
     # IMPORTANT: make sure your desired_text_array strings are all lowercase, 
     # as the code requires all text to be lowercase to match (it considers all text lowercase)
 
+    #TODO:
+    # add an "ignored strings" array, so that I will not have to manually parse known false flags
+
     start_time = time.time()
     os.system('cls') # clear console
     global total_files_checked
     global total_lines_matched
     global total_folders_found
 
-    directory = os.fsencode('C:/0-Godot Games/0-Engine/Godot Source')
-    desired_text_array = ['class image']
-    valid_filetype_array = [".txt",".py",".cpp",".h",".xml"]
+    # 'C:/0-Godot Games/0-Engine/Godot Source/godot'
+    # 'C:/1-Unity Games/The-Chittering/Assets/Scripts'
+    directory = os.fsencode('C:/0-Godot Games/0-Engine/Godot Source/godot')
+    #' an b',' an c',' an d',' an f',' an g',' an h',' an j',' an k',' an l',' an m',' an n',' an p',' an q',' an r',' an s',' an t',' an v',' an w',' an y',' an z'
+    desired_text_array = ['.gdc']
+    valid_filetype_array = [".cs"]
+    # valid_filetype_array = [".h", ".cpp", ",xml"]
 
     search_for_strings_in_directory(directory, desired_text_array, valid_filetype_array)
 
